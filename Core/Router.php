@@ -10,7 +10,6 @@ namespace Core;
 
 class Router
 {
-    private $route = [];
     private $prefix = '';
     private $middleware = [];
 
@@ -30,10 +29,55 @@ class Router
         $globalRoute[$method . $prefix . $path] = ['method' => $method, 'action' => $action, 'uri' => $path, 'middleware' => $middleware];
     }
 
-
-    public function getRoute()
+    /**
+     * post请求
+     * @param string $path
+     * @param array $action
+     * @param array $middleware
+     */
+    public function post(string $path, array $action, array $middleware = [])
     {
-        print_r($this->route);
+        $path = trim($path, '/');
+        global $globalRoute;
+        $prefix = $this->prefix;
+        $middleware = array_merge($this->middleware, $middleware);
+
+        $method = 'POST/';
+        $globalRoute[$method . $prefix . $path] = ['method' => $method, 'action' => $action, 'uri' => $path, 'middleware' => $middleware];
+    }
+
+    /**
+     * PUT请求
+     * @param string $path
+     * @param array $action
+     * @param array $middleware
+     */
+    public function put(string $path, array $action, array $middleware = [])
+    {
+        $path = trim($path, '/');
+        global $globalRoute;
+        $prefix = $this->prefix;
+        $middleware = array_merge($this->middleware, $middleware);
+
+        $method = 'PUT/';
+        $globalRoute[$method . $prefix . $path] = ['method' => $method, 'action' => $action, 'uri' => $path, 'middleware' => $middleware];
+    }
+
+    /**
+     * DELETE请求
+     * @param string $path
+     * @param array $action
+     * @param array $middleware
+     */
+    public function delete(string $path, array $action, array $middleware = [])
+    {
+        $path = trim($path, '/');
+        global $globalRoute;
+        $prefix = $this->prefix;
+        $middleware = array_merge($this->middleware, $middleware);
+
+        $method = 'DELETE/';
+        $globalRoute[$method . $prefix . $path] = ['method' => $method, 'action' => $action, 'uri' => $path, 'middleware' => $middleware];
     }
 
     /**
