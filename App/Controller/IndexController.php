@@ -20,6 +20,10 @@ class IndexController
         echo 'user';
     }
 
+    /**
+     * @param $id
+     * @param $age
+     */
     public function info($id, $age)
     {
         echo 'id:' . $id . '<br>';

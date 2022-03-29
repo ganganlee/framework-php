@@ -5,6 +5,36 @@ php开发框架，此框架只包含
  - 路由模块 - route
  - 中间件模块 - middleware
  
+ ### 控制器使用文档
+ - 控制器文件定义在App/Controller目录下，注意命名空间
+ ```php
+namespace App\Controller;
+
+class IndexController
+{
+    public function index()
+    {
+        echo 'index';
+    }
+
+    public function user()
+    {
+        echo 'user';
+    }
+
+    /**
+     * @param $id
+     * @param $age
+     */
+    public function info($id, $age)
+    {
+        //此处的两个参数，需要通过定义路由参数获取，具体的路由参数定义参考下文
+        echo 'id:' . $id . '<br>';
+        echo 'age:' . $age . '<br>';
+    }
+}
+```
+ 
  ### 路由使用文档
  - 路由文件在App/Route/route.php定义
  ```php
