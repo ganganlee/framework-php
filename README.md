@@ -58,3 +58,28 @@ $v1 = $route->group('/v1',[Auth::class]);
 //规则：第一个参数对应路由前缀，第二个参数对应路由中间件，中间件的执行顺序对应此处的顺序，可以定义多个中间件
 //定义路由组时返回一个新的路由对象，再用此对象定义此路由组中的路由
 ```
+
+### 中间件使用文档
+- 中间件文件定义在App/middle目录下
+```php
+namespace App\Middle;
+
+use Core\Middleware;
+use Ganganlee\PhpResponse\Response;
+
+//所有中间件都必须继承Core\Middleware类，然后实现该类的handle方法
+class Auth extends Middleware
+{
+    public static function handle($request, $next)
+    {
+        // 此处执行自己的业务逻辑
+        echo '加载了中间件<br>';
+        
+        //如果请求执行失败，可以在此处结束请求
+        //Response::ResponseError('结束请求');
+        
+        //业务执行成功，将请求发送到下一步继续执行
+        $next($request);
+    }
+}
+```

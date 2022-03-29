@@ -9,6 +9,7 @@
 namespace App\Middle;
 
 use Core\Middleware;
+use Ganganlee\PhpResponse\Response;
 
 class Auth extends Middleware
 {
@@ -17,6 +18,8 @@ class Auth extends Middleware
         // TODO: Implement handle() method.
 
         echo '加载了中间件<br>';
+
+        Response::ResponseError('结束请求');
         $next($request);
     }
 }
