@@ -1,0 +1,59 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "680dd1e72d9ba1393356277207a02627",
+    "packages": [
+        {
+            "name": "ganganlee/php-response",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ganganlee/php-response.git",
+                "reference": "ef411656cfedfe0c229618a5ca63358a04b11cad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ganganlee/php-response/zipball/ef411656cfedfe0c229618a5ca63358a04b11cad",
+                "reference": "ef411656cfedfe0c229618a5ca63358a04b11cad",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ganganlee\\PhpResponse\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ganganlee",
+                    "email": "ganganlee@outlook.com"
+                }
+            ],
+            "description": "php response",
+            "support": {
+                "issues": "https://github.com/ganganlee/php-response/issues",
+                "source": "https://github.com/ganganlee/php-response/tree/v1.0.0"
+            },
+            "time": "2022-03-15T01:39:34+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "ganganlee/php-response": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.2.0"
+}

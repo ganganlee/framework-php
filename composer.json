@@ -1,0 +1,22 @@
+{
+    "name": "ganganlee/php-smart-framework",
+    "description": "php framework",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/",
+            "Core\\": "Core"
+        }
+    },
+    "authors": [
+        {
+            "name": "ganganlee",
+            "email": "ganganlee@outlook.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "ganganlee/php-response": "dev-main"
+    }
+}
