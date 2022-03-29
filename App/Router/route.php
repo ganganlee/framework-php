@@ -18,9 +18,10 @@ use Core\Router;
 
 $route = new Router();
 $route->get('/', [IndexController::class, 'index'], [Auth::class]);
-
+$route->post('/login',[IndexController::class,'login']);
+$route->get('/info/:id',[IndexController::class,'login']);
 //注册路由组
-$v1 = $route->group('/v1');
+$v1 = $route->group('/v1',[Auth::class]);
 {
     $v1->get('/user', [IndexController::class, 'user']);
     $v1->get('/user/:id/', [IndexController::class, 'info']);
